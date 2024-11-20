@@ -1,6 +1,6 @@
+package edu.uc.cs3003.medava;
 import java.util.ArrayList;
 import java.util.List;
-package edu.uc.cs3003.medava;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class Transporter {
     // Public: needed for us to load and unload the goods of list (add/remove)
     // list of "Medicine class" denoted as goods
 
-    Public List<Medicine> goods;
+    public List<Medicine> goods;
     {
         goods = new ArrayList<Medicine>();
     }
