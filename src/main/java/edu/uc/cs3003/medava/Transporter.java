@@ -1,5 +1,7 @@
 package edu.uc.cs3003.medava;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +25,10 @@ public class Transporter {
     // Public: needed for us to load and unload the goods of list (add/remove)
     // list of "Medicine class" denoted as goods
 
-    public List<Medicine> goods;
+    private List<Shippable> goods;
     {
-        goods = new ArrayList<Medicine>();
+        goods = new ArrayList<Shippable>();
+
     }
 
     public void ship() {
@@ -34,4 +37,34 @@ public class Transporter {
 
     private double mLowTemperature, mHighTemperature;
 
+    //Loading-->Adding to list
+        public boolean load(Shippable itemToLoad) {
+            if (itemToLoad.isTemperatureRangeAcceptable(mLowTemperature, mHighTemperature)) {
+                return goods.add(itemToLoad);
+            }
+            return false;
+            /*
+        try {
+            Method isTemperatureRangeAcceptableMethod = itemToLoad.getClass().getMethod("isTemperatureRangeAcceptable",
+                    Double.class, Double.class);
+            boolean resultOfMethodCall = (boolean) isTemperatureRangeAcceptableMethod.invoke(itemToLoad,
+                    Double.valueOf(mLowTemperature), Double.valueOf(mHighTemperature));
+            if (resultOfMethodCall) {
+                goods.add(itemToLoad);
+            }
+            return resultOfMethodCall;
+        } catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException
+                | InvocationTargetException e) {
+            return false;
+        }
+            */
+    }
+    
+    //Unload--> Remove from list
+    public Shippable unload() {
+        return goods.remove(0);
+    }
+    public boolean isEmpty() {
+        return goods.isEmpty();
+    }
 }
