@@ -1,6 +1,6 @@
 package edu.uc.cs3003.medava;
 
-public class Medicine {
+public abstract class Medicine implements Shippable{
 
     //Private val that is updated from constructor indirectly from user
     private String mMedicineName;
@@ -31,5 +31,6 @@ public class Medicine {
     public double maximumTemperature() {
         return 100.0;
     }
-
+    //TOBE overridden
+    public abstract MedicineSchedule getSchedule();
 }
