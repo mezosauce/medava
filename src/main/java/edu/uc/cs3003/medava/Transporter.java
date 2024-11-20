@@ -1,13 +1,22 @@
 package edu.uc.cs3003.medava;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import java.util.List;
 
 public class Transporter {
-    //Private value updated indirectly by user
+    // Private value updated indirectly by user
     private String mTransporterName;
-    //Constructor
+
+    // Constructor
+    public Transporter(String transporterName, double lowTemp, double highTemp) {
+        mTransporterName = transporterName;
+        mLowTemperature = lowTemp;
+        mHighTemperature = highTemp;
+    }
+
+    // Getter
     public String getTransporterName() {
         return mTransporterName;
     }
@@ -21,6 +30,8 @@ public class Transporter {
 
     public void ship() {
         // Do some shipping!
-      }
-    
+    }
+
+    private double mLowTemperature, mHighTemperature;
+
 }
