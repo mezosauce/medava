@@ -3,5 +3,10 @@ Compile: "javac -d out src/main/java/edu/uc/cs3003/medava/*.java"
 Run: "java -cp out edu.uc.cs3003.medava.SupplyChain"
 So understanding that I need to use the terminal in order to make the compiler work and run, is the reason why the Run/Debug section ovetrthe SupplyChain.java file 
 running the code in the terminal differently?
+
 2. So I understand that the constructor has a insatnce initializer that presets an initalized list from being a NULL value. So if we were to take that list and give 
 it its own intialized value from the beggining does that throw in an error with the unseen block code?
+
+3. So in a game building standard (take the snake game persay) would using Java be a valid program to write code in for that type of development?
+
+4. Under JAVA's slogan Write once, Run everywhere, does that make it one of the most convient programs to write code into?
