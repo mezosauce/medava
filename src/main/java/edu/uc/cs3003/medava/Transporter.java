@@ -11,9 +11,16 @@ public class Transporter {
     public String getTransporterName() {
         return mTransporterName;
     }
-    // Private list of "Medicine class" denoted as goods
+    // Public: needed for us to load and unload the goods of list (add/remove)
+    // list of "Medicine class" denoted as goods
+
     Public List<Medicine> goods;
     {
         goods = new ArrayList<Medicine>();
     }
+
+    public void ship() {
+        // Do some shipping!
+      }
+    
 }
